@@ -136,7 +136,7 @@ import           Foreign.Marshal.Alloc
 import           Foreign.Ptr
 import           Foreign.Storable
 import           NanoVG.Internal
-import           NanoVG.Internal.GL3
+import           NanoVG.Internal.GL2
 import qualified NanoVG.Internal.Text as Internal
 import           NanoVG.Internal.Text hiding (textBreakLines,textGlyphPositions,text)
 

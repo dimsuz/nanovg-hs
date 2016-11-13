@@ -1,4 +1,4 @@
-module NanoVG.Internal.GL3 where
+module NanoVG.Internal.GL2 where
 
 import qualified Data.Set as S
 import           Data.Word
@@ -8,7 +8,7 @@ import           NanoVG.Internal.Types
 import           NanoVG.Internal.Context
 import           NanoVG.Internal.FFIHelpers
 
--- For now only the GL3 backend is supported
+-- For now only the GL2 backend is supported
 #define NANOVG_GL2
 -- We need to include this to define GLuint
 #include "GL/glew.h"

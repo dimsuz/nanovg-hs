@@ -9,7 +9,7 @@ import           NanoVG.Internal.Context
 import           NanoVG.Internal.FFIHelpers
 
 -- For now only the GL3 backend is supported
-#define NANOVG_GL3
+#define NANOVG_GL2
 -- We need to include this to define GLuint
 #include "GL/glew.h"
 #include "nanovg.h"
@@ -21,15 +21,15 @@ import           NanoVG.Internal.FFIHelpers
          {underscoreToCase} with prefix = "NVG_"
          deriving (Show,Read,Eq,Ord)#}
 
-{#fun unsafe nvgCreateGL3 as createGL3
+{#fun unsafe nvgCreateGL2 as createGL2
         {bitMask`S.Set CreateFlags'} -> `Context'#}
-{#fun unsafe nvgDeleteGL3 as deleteGL3
+{#fun unsafe nvgDeleteGL2 as deleteGL2
         {`Context'} -> `()'#}
 
 type GLuint = Word32
 
-{#fun unsafe nvglCreateImageFromHandleGL3 as createImageFromHandleGL3
+{#fun unsafe nvglCreateImageFromHandleGL2 as createImageFromHandleGL2
         {`Context',fromIntegral`GLuint',`CInt',`CInt',`CreateFlags'} -> `Image'Image#}
 
-{#fun unsafe nvglImageHandleGL3 as imageHandleGL3
+{#fun unsafe nvglImageHandleGL2 as imageHandleGL2
         {`Context',imageHandle`Image'} -> `GLuint'fromIntegral#}

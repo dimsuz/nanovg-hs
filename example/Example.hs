@@ -28,10 +28,8 @@ main :: IO ()
 main =
   do e <- init
      when (not e) $ putStrLn "Failed to init GLFW"
-     windowHint $ WindowHint'ContextVersionMajor 3
-     windowHint $ WindowHint'ContextVersionMinor 2
-     windowHint $ WindowHint'OpenGLForwardCompat True
-     windowHint $ WindowHint'OpenGLProfile OpenGLProfile'Core
+     windowHint $ WindowHint'ContextVersionMajor 2
+     windowHint $ WindowHint'ContextVersionMinor 0
      windowHint $ WindowHint'OpenGLDebugContext True
      win <- createWindow 1000 600 "NanoVG" Nothing Nothing
      case win of
@@ -40,7 +38,7 @@ main =
          do makeContextCurrent win
             glewInit
             glGetError
-            c@(Context c') <- createGL3 (S.fromList [Antialias,StencilStrokes,Debug])
+            c@(Context c') <- createGL2 (S.fromList [Antialias,StencilStrokes,Debug])
             -- error handling? who needs that anyway
             Just demoData <- runMaybeT $ loadDemoData c
             swapInterval 0

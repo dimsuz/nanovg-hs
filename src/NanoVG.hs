@@ -116,10 +116,10 @@ module NanoVG
   , textBreakLines
   -- * GL
   , CreateFlags(..)
-  , createGL3
-  , deleteGL3
-  , createImageFromHandleGL3
-  , imageHandleGL3
+  , createGL2
+  , deleteGL2
+  , createImageFromHandleGL2
+  , imageHandleGL2
   -- * Vector types
   , V2(..)
   , V3(..)
